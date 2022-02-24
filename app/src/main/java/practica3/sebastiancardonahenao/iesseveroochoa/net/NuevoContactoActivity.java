@@ -1,12 +1,6 @@
 package practica3.sebastiancardonahenao.iesseveroochoa.net;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -90,53 +84,41 @@ public class NuevoContactoActivity extends AppCompatActivity implements View.OnC
             }
         });
 
-        rgEmpresa.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        switch (i) {
-                            case R.id.rbEmpresa:
-                                ivEntidad.setImageResource(R.drawable.ic_empresa);
-                                break;
-                            case R.id.rbParticular:
-                                ivEntidad.setImageResource(R.drawable.ic_particular);
-                                break;
-                        }
-                    }
-        });
-
-        rgSexo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                switch (i) {
-                    case R.id.rbHombre:
-                        ivSexo.setImageResource(R.drawable.ic_man);
-                        break;
-                    case R.id.tbMujer:
-                        ivSexo.setImageResource(R.drawable.ic_girl_call);
-                        break;
-                }
+        rgEmpresa.setOnCheckedChangeListener((radioGroup, i) -> {
+            switch (i) {
+                case R.id.rbEmpresa:
+                    ivEntidad.setImageResource(R.drawable.ic_empresa);
+                    break;
+                case R.id.rbParticular:
+                    ivEntidad.setImageResource(R.drawable.ic_particular);
+                    break;
             }
         });
 
-        swFav.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b)
-                    ivFav.setVisibility(View.VISIBLE);
-                else
-                    ivFav.setVisibility(View.INVISIBLE);
-
+        rgSexo.setOnCheckedChangeListener((radioGroup, i) -> {
+            switch (i) {
+                case R.id.rbHombre:
+                    ivSexo.setImageResource(R.drawable.ic_man);
+                    break;
+                case R.id.tbMujer:
+                    ivSexo.setImageResource(R.drawable.ic_girl_call);
+                    break;
             }
         });
 
-        ckRecordar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    ivLlamar.setVisibility(View.VISIBLE);
-                }else {
-                    ivLlamar.setVisibility(View.INVISIBLE);
-                }
+        swFav.setOnCheckedChangeListener((compoundButton, b) -> {
+            if(b)
+                ivFav.setVisibility(View.VISIBLE);
+            else
+                ivFav.setVisibility(View.INVISIBLE);
+
+        });
+
+        ckRecordar.setOnCheckedChangeListener((compoundButton, b) -> {
+            if(b){
+                ivLlamar.setVisibility(View.VISIBLE);
+            }else {
+                ivLlamar.setVisibility(View.INVISIBLE);
             }
         });
     }
