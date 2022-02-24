@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Practica 3</string>
+    <string name="sebastian">Sebastian Cardona Henao</string>
+    <string name="nuevo_contacto">Nuevo Contacto</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="empresa">Empresa</string>
+    <string name="particular">Particular</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="salir">Salir</string>
+    <string name="nuevo">Nuevo</string>
+    <string name="edad">Edad: </string>
+    <string name="recordar_llamar">Recordar llamar</string>
+    <string name="introduce_los_datos">Introduce los datos</string>
+</resources>
