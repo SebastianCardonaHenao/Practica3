@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
@@ -126,7 +125,6 @@ public class NuevoContactoActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View view) {
         Intent i;
-        //creamos el intent para llamar a la acitividad
         i=new Intent(this,EntradaDatosActivity.class);
         switch (view.getId()) {
             case R.id.tvNombreContacto:
@@ -134,18 +132,12 @@ public class NuevoContactoActivity extends AppCompatActivity implements View.OnC
                 startActivityForResult(i,OPTION_REQUEST_NOMBRE);
                 break;
             case R.id.tvApellido:
-                //enviamos el apellido actual
                 i.putExtra(EntradaDatosActivity.EXTRA_DATOS,tvApellido.getText().toString());
-                //llamamos a la actividad a la espera de recibir el resultado
-                //indicando el código de llamada
                 startActivityForResult(i,OPTION_REQUEST_APELLIDO);
                 break;
 
             case R.id.tvEmpresa:
-                //enviamos el apellido actual
                 i.putExtra(EntradaDatosActivity.EXTRA_DATOS,tvEmpresa.getText().toString());
-                //llamamos a la actividad a la espera de recibir el resultado
-                //indicando el código de llamada
                 startActivityForResult(i,OPTION_REQUEST_EMPRESA);
                 break;
 
